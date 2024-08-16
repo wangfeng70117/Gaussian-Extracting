@@ -8,14 +8,17 @@ The recently developed 3D Gaussian Splatting (3DGS) stands out as an exceptional
 
 # 3D Object Segmentation
 ## Single Point Prompt
+Our interactive single-point prompt segmentation method excels in speed, completing accurate object segmentation in less than a second, with segmentation times in the millisecond range greatly enhancing the interactivity of our approach.
 
 https://github.com/user-attachments/assets/5cc240a2-61e1-40a5-8ac5-07d240cc06dc
 
 ## Multi-Point Prompt
+Our method enhances both the robustness and interactivity of scene segmentation, ensuring accurate results even in the presence of overlapping or densely packed objects.
 
 https://github.com/user-attachments/assets/df236cbd-66ef-4d72-b7a2-2bd9c0d3bce1
 
 ## Text Prompt
+Our method enhances the usability and applicability of 3D segmentation in various complex scenarios, providing a robust solution for accurate model extraction from textual prompts.
 
 https://github.com/user-attachments/assets/bf2ad407-b8cc-4035-b863-8a007686dc64
 
