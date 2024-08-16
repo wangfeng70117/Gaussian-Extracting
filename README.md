@@ -11,3 +11,11 @@ The recently developed 3D Gaussian Splatting (3DGS) stands out as an exceptional
 
 https://github.com/user-attachments/assets/5cc240a2-61e1-40a5-8ac5-07d240cc06dc
 
+## Multi-Point Prompt
+
+https://github.com/user-attachments/assets/df236cbd-66ef-4d72-b7a2-2bd9c0d3bce1
+
+## Text Prompt
+
+https://github.com/user-attachments/assets/bf2ad407-b8cc-4035-b863-8a007686dc64
+
