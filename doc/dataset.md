@@ -10,5 +10,5 @@ We also provide a script for evaluating IoU and Boundary-IoU. You can change the
 
 For example,
 ```
-def hello_world():
-    print("Hello, World!")
+python eval_gaussian_extracting.py figurines
+python eval_gaussian_extracting.py teatime
