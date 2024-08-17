@@ -3,8 +3,6 @@ We used scenes from datasets such as LERF, MIP-NERF, and LLFF, and processed som
 
 The original datasets such as LERF, MIP-NERF, and LLFF can be downloaded from [LLFF, Mip-NeRF-360](https://drive.google.com/drive/folders/128yBriW1IG_3NJ5Rp7APSTZsJqdJdfc1), [LERF](https://drive.google.com/drive/folders/1vh0mSl7v29yaGsxleadcj-LCZOE_WEWB). These data sets are public data sets for the field of 3D reconstruction.
 
-In particular, in LERF's figurines data set, we provide a pre-trained model trained using original 3DGS and Gaussian Grouping, provide images from various perspectives of 3D scenes trained by the two methods. These images can be used for the evaluation of reconstruction quality
-
 ## 1. Segmentation Quality
 We also provide a script for evaluating IoU and Boundary-IoU. You can change the output path to your output folder and run the script.
 
@@ -15,7 +13,9 @@ python eval_gaussian_extracting.py teatime
 ```
 
 ## 2.Reconstruction quality
-We also provide a script for evaluating PSNR, SSIM and LPIPS. You can download our training results from[huggingface](https://huggingface.co/datasets/wfysu/GaussianExtracting/tree/main).
+In particular, in LERF's figurines data set, we provide a pre-trained model trained using original 3DGS and Gaussian Grouping, provide images from various perspectives of 3D scenes trained by the two methods. These images can be used for the evaluation of reconstruction quality.
+
+We also provide a script for evaluating PSNR, SSIM and LPIPS. You can download our training results from [huggingface](https://huggingface.co/datasets/wfysu/GaussianExtracting/blob/main/figurines.rar).
 ```
 data
 |____figurines
