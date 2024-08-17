@@ -12,3 +12,29 @@ For example,
 ```
 python eval_gaussian_extracting.py figurines
 python eval_gaussian_extracting.py teatime
+
+## 2.Reconstruction quality
+We also provide a script for evaluating PSNR, SSIM and LPIPS. You can download our training results from[huggingface](https://huggingface.co/datasets/wfysu/GaussianExtracting/tree/main).
+```
+data
+|____figurines
+| |____category
+| |____distorted
+| |____images
+| |____sparse
+| |____stereo
+| |____gs_output
+| |____ge_output
+|____teatime
+| |____...
+|____other dataset
+| |____...
+...
+
+For example,
+```
+Gaussian Extracting:
+python metrics.py --model_paths data/figurines/ge_output/train/ours_30000/
+3DGS:
+python metrics.py --model_paths data/figurines/gs_output/train/ours_30000/
+
