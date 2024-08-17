@@ -12,6 +12,7 @@ For example,
 ```
 python eval_gaussian_extracting.py figurines
 python eval_gaussian_extracting.py teatime
+```
 
 ## 2.Reconstruction quality
 We also provide a script for evaluating PSNR, SSIM and LPIPS. You can download our training results from[huggingface](https://huggingface.co/datasets/wfysu/GaussianExtracting/tree/main).
@@ -30,7 +31,7 @@ data
 |____other dataset
 | |____...
 ...
-
+```
 For example,
 ```
 Gaussian Extracting:
