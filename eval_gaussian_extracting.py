@@ -4,8 +4,7 @@ from PIL import Image
 import cv2
 import sys
 
-# dataset_name = sys.argv[1]
-dataset_name = 'figurines'
+dataset_name = sys.argv[1]
 gt_folder_path = os.path.join('result', 'gt_' + dataset_name)
 pred_folder_path = os.path.join('result', 'pred_'+ dataset_name)
 
