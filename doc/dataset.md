@@ -9,6 +9,6 @@ In particular, in the data set figurines, we provide a pre-trained model trained
 We also provide a script for evaluating IoU and Boundary-IoU. You can change the output path to your output folder and run the script.
 
 For example,
-```python
+```
 def hello_world():
     print("Hello, World!")
