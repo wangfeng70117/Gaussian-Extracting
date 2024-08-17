@@ -22,3 +22,6 @@ Our method enhances the usability and applicability of 3D segmentation in variou
 
 https://github.com/user-attachments/assets/bf2ad407-b8cc-4035-b863-8a007686dc64
 
+# Dataset
+We used scenes from datasets such as LERF, MIP-NERF, and LLFF, and processed some of the images into additional grayscale images to create the dataset required for this paper. The created dataset is available at 
+https://huggingface.co/datasets/wfysu/GaussianExtracting/tree/main.
