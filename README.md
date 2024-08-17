@@ -23,3 +23,6 @@ https://github.com/user-attachments/assets/bf2ad407-b8cc-4035-b863-8a007686dc64
 
 # Dataset
 For evaluating the segmentation quality and reconstruction quality in the paper, you can refer to [the dataset documentation](doc/dataset.md).
+
+# Source Code
+Our source code will be released after the paper is accepted.
