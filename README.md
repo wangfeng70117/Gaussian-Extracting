@@ -22,7 +22,10 @@ Our method enhances the usability and applicability of 3D segmentation in variou
 https://github.com/user-attachments/assets/bf2ad407-b8cc-4035-b863-8a007686dc64
 
 # Dataset
+We used scenes from datasets such as LERF, MIP-NERF, and LLFF, and processed some of the images into additional grayscale images to create the dataset required for this paper. The data that support the findings of this study are available in [huggingface](https://huggingface.co/datasets/wfysu/GaussianExtracting/tree/main).
+
 The original datasets such as LERF, MIP-NERF, and LLFF can be downloaded from [LLFF, Mip-NeRF-360](https://drive.google.com/drive/folders/128yBriW1IG_3NJ5Rp7APSTZsJqdJdfc1), [LERF](https://drive.google.com/drive/folders/1vh0mSl7v29yaGsxleadcj-LCZOE_WEWB). These data sets are public data sets for the field of 3D reconstruction.
+
 For evaluating the segmentation quality and reconstruction quality in the paper, you can refer to [the dataset documentation](doc/dataset.md).
 
 # Config & Running
