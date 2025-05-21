@@ -76,28 +76,10 @@ python demo_automatic_gray.py \
 ```
 python convert.py -s data/bear
 ```
-### Step 2: Train Gaussian Splats
+### Step 2: Train
 ```
 python train.py -s data/counter -m data/counter/output
-```
-### Step 3: Generate Grayscale Segmentation Masks
-```
-python demo_automatic_gray.py \
-  --chunk_size 4 \
-  --img_path ../data/counter/images \
-  --amp \
-  --temporal_setting semionline \
-  --size 480 \
-  --output "./data/counter/gray_seg_output" \
-  --suppress_small_objects \
-  --SAM_PRED_IOU_THRESHOLD 0.7
-```
-Move the generated grayscale masks to /data/category.
-### Step 4: Train
-```
-python train.py -s data/counter -m data/counter/output
-```
-### Step 5: Launch the Web UI
+### Step 3: Launch the Web UI
 ```
 python webui.py --gs_source data/caijian/output/point_cloud/iteration_30000/point_cloud.ply --colmap_path data/caijian --pth_path data/caijian/output/point_cloud/iteration_30000/classifier.pth
 ```
