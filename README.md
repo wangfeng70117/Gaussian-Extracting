@@ -24,9 +24,6 @@ https://github.com/user-attachments/assets/bf2ad407-b8cc-4035-b863-8a007686dc64
 # Dataset
 For evaluating the segmentation quality and reconstruction quality in the paper, you can refer to [the dataset documentation](doc/dataset.md).
 
-# Source Code
-Our source code will be released after the paper is accepted.
-
 # Config & Running
 ## Tracking Anything with DEVA - Automatic Segmentation and 3DGS Integration
 
@@ -63,23 +60,24 @@ cd ../..
 ```
 python demo_automatic_gray.py \
   --chunk_size 4 \
-  --img_path ../data/horns/images \
+  --img_path $images_dir$ \
   --amp \
   --temporal_setting semionline \
   --size 480 \
-  --output "./data/horns/gray_seg_output" \
+  --output $output_dir$ \
   --suppress_small_objects \
   --SAM_PRED_IOU_THRESHOLD 0.7
 ```
 ## 📸 Integrating with 3D Gaussian Splatting
 ### Step 1: Generate COLMAP Camera Poses
 ```
-python convert.py -s data/bear
+python convert.py -s $data_path$
 ```
 ### Step 2: Train
 ```
-python train.py -s data/counter -m data/counter/output
+python train.py -s $data_path$ -m $output_path$
+```
 ### Step 3: Launch the Web UI
 ```
-python webui.py --gs_source data/caijian/output/point_cloud/iteration_30000/point_cloud.ply --colmap_path data/caijian --pth_path data/caijian/output/point_cloud/iteration_30000/classifier.pth
+python webui.py --gs_source $output_path$/point_cloud/iteration_30000/point_cloud.ply --colmap_path $data_path$ --pth_path $output_path$/point_cloud/iteration_30000/classifier.pth
 ```
