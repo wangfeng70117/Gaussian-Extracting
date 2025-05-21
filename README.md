@@ -26,3 +26,67 @@ For evaluating the segmentation quality and reconstruction quality in the paper,
 
 # Source Code
 Our source code will be released after the paper is accepted.
+
+# Config & Running
+## Tracking Anything with DEVA - Automatic Segmentation and 3DGS Integration
+
+This repository demonstrates how to perform automatic video object segmentation using [Tracking Anything with DEVA](https://github.com/showlab/Tracking-Anything-with-DEVA), and how to integrate the results with 3D Gaussian Splatting (3DGS) pipelines.
+
+---
+
+## 🛠️ Setup Instructions
+
+### Step 1: Install Tracking Anything with DEVA
+
+```bash
+git clone https://github.com/showlab/Tracking-Anything-with-DEVA.git
+cd Tracking-Anything-with-DEVA
+pip install -e .
+bash scripts/download_models.sh
+
+Move demo_automatic.py into the Tracking-Anything-with-DEVA folder to avoid import errors:
+
+mv path/to/demo_automatic.py Tracking-Anything-with-DEVA/
+
+### Step 2: Install Grounded Segment Anything
+git clone https://github.com/hkchengrex/Grounded-Segment-Anything.git
+cd Grounded-Segment-Anything
+export AM_I_DOCKER=False
+export BUILD_WITH_CUDA=True
+python -m pip install -e segment_anything
+python -m pip install -e GroundingDINO
+cd ../..
+
+### Grayscale Segmentation
+
+python demo_automatic_gray.py \
+  --chunk_size 4 \
+  --img_path ../data/horns/images \
+  --amp \
+  --temporal_setting semionline \
+  --size 480 \
+  --output "./data/horns/gray_seg_output" \
+  --suppress_small_objects \
+  --SAM_PRED_IOU_THRESHOLD 0.7
+
+## 📸 Integrating with 3D Gaussian Splatting
+Step 1: Generate COLMAP Camera Poses
+python convert.py -s data/bear
+Step 2: Train Gaussian Splats
+python train.py -s data/counter -m data/counter/output
+Step 3: Generate Grayscale Segmentation Masks
+python demo_automatic_gray.py \
+  --chunk_size 4 \
+  --img_path ../data/counter/images \
+  --amp \
+  --temporal_setting semionline \
+  --size 480 \
+  --output "./data/counter/gray_seg_output" \
+  --suppress_small_objects \
+  --SAM_PRED_IOU_THRESHOLD 0.7
+Move the generated grayscale masks to /data/category.
+Step 4: Train
+python train.py -s data/counter -m data/counter/output
+
+Step 5: Launch the Web UI
+python webui.py --gs_source data/caijian/output/point_cloud/iteration_30000/point_cloud.ply --colmap_path data/caijian --pth_path data/caijian/output/point_cloud/iteration_30000/classifier.pth
