@@ -61,8 +61,11 @@ python -m pip install -e GroundingDINO
 cd ../..
 ```
 ### Grayscale Segmentation
+
+You can replace demo_automatic.py in DEVA with our demo_automatic.py and then run:
+
 ```
-python demo_automatic_gray.py \
+python demo_automatic.py \
   --chunk_size 4 \
   --img_path $images_dir$ \
   --amp \
@@ -70,7 +73,8 @@ python demo_automatic_gray.py \
   --size 480 \
   --output $output_dir$ \
   --suppress_small_objects \
-  --SAM_PRED_IOU_THRESHOLD 0.7
+  --SAM_PRED_IOU_THRESHOLD 0.7 \
+  --use_short_id
 ```
 ## 📸 Integrating with 3D Gaussian Splatting
 ### Step 1: Generate COLMAP Camera Poses
